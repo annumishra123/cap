@@ -13,16 +13,16 @@ const stylePaper = {
   width: '400px',
   background: '#f8f8f9',
   position: 'relative',
-  marginLeft:'35%',
+  marginLeft: '35%',
   marginTop: '70px'
 };
 
 const styleText = {
-    marginLeft: '100px',
-    marginTop: '-50px',
-    fontSize: '1.71429rem',
-    fontFamily: 'ff-clan-web-pro,"Helvetica Neue",Helvetica,sans-serif!important',
-    fontWeight: '400'
+  marginLeft: '100px',
+  marginTop: '-50px',
+  fontSize: '1.71429rem',
+  fontFamily: 'ff-clan-web-pro,"Helvetica Neue",Helvetica,sans-serif!important',
+  fontWeight: '400'
 };
 
 const FormItem = Form.Item;
@@ -39,39 +39,11 @@ class Signup extends Component {
       if (!err) {
         const values = {
           ...fieldsValue,
-          role: 'driver'        
+          role: 'driver'
         };
         //delete values[""];
         console.log("Received values of form: ", values);
-        axios
-          .post("https://api.crossfire37.hasura-app.io/signup", 
-          {
-            "user": {
-              "provider": "username",
-              "data": {
-                "username": values.firstname,
-                "password": values.password
-              }
-            },
-            "role": values.role,
-            "firstname": values.firstname,
-            "lastname": values.lastname,
-            "regno": values.vehicleregistrationnumber,
-            "type": values.vehicletype,
-            "capacity": values.vehiclecapacity,
-            "city": values.city
-          }
-          )
-          .then(response => {
-            console.log(response);
-            localStorage.setItem('AuthToken' ,response.data.auth_token)
-            this.setState({ res: response.data });
-            this.setState({ res_received: true });
-          })
-          .catch(error => {
-            alert("ERROR: User name already exists!")
-            console.log(error);
-          });
+
       }
     });
   };
@@ -86,9 +58,9 @@ class Signup extends Component {
 
     return (
       <Paper style={stylePaper}>
-        
+
         <Form onSubmit={this.handleSubmit} className="signup-form">
-          <div style={{marginTop: '20px', marginBottom: '20px'}}>
+          <div style={{ marginTop: '20px', marginBottom: '20px' }}>
             <div style={styleText}           >
               Sign up to Drive
             </div>

@@ -41,26 +41,7 @@ class Signup extends Component {
           ...fieldsValue,        
         };
         console.log("Received values of form: ", values);
-        // axios
-        //   .post("https://api.crossfire37.hasura-app.io/login", 
-        //       {
-        //         "provider" : "username",
-        //         "data": {
-        //           "username": values.firstname,
-        //           "password": values.password
-        //         }
-        //       }
-        //   )
-        //   .then(response => {
-        //     console.log(response);
-        //     localStorage.setItem('AuthToken' ,response.data.auth_token)
-        //     this.setState({ res: response.data });
-        //     this.setState({ res_received: true });
-        //   })
-        //   .catch(error => {
-        //     alert("ERROR: User name does not exists!");
-        //     console.log(error);
-        //   });
+        
       }
     });
   };

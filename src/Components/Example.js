@@ -76,21 +76,6 @@ class Signup extends Component {
     if (this.state.res_received) {
       alert('data recieved');
       console.log(this.state.res_recieved);
-      
-      // result = (
-      //   <p>
-      //     <b>
-      //       {this.state.res[0].message
-      //         ? this.state.res[0].message
-      //         : "User created"}
-      //     </b>
-      //     <br />
-      //     Visit{" "}
-      //     <a target="_blank" href={this.state.res[1].link}>
-      //       Google Sheet
-      //     </a>
-      //   </p>
-      // );
     }
 
     return (

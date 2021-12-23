@@ -54,35 +54,6 @@ class Signup extends Component {
         };
         //delete values[""];
         console.log("Received values of form: ", values);
-        axios
-          .post("https://api.crossfire37.hasura-app.io/signup", 
-          {
-            "user": {
-              "provider": "username",
-              "data": {
-                "username": values.firstname,
-                "password": values.password
-              }
-            },
-            "role": values.role,
-            "firstname": values.firstname,
-            "lastname": values.lastname,
-            "regno": values.vehicleregistrationnumber,
-            "type": values.vehicletype,
-            "capacity": values.vehiclecapacity,
-            "city": values.city
-          }
-          )
-          .then(response => {
-            console.log(response);
-            localStorage.setItem('AuthToken' ,response.data.auth_token)
-            this.setState({ res: response.data });
-            this.setState({ res_received: true });
-          })
-          .catch(error => {
-            alert("ERROR: User name already exists!")
-            console.log(error);
-          });
       }
     });
   };
